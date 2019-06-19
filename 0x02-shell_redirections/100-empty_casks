@@ -1,2 +1,2 @@
 #!/bin/bash
-find -empty -execdir echo {} ';'
+find -empty -execdir echo {} ';' | tr -d "./"
