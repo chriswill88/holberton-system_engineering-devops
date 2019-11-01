@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script is iterates from 1 - 20, display various countries bas luck numbers
+for i in {1..20};do
+	echo "$i"
+	if [ $i -eq 4 ]
+	then
+		echo "bad luck from China"
+	elif [ $i -eq 9 ]
+	then
+		echo "bad luck from Japan"
+	elif [ $i -eq 17 ]
+	then
+		echo "bad luck from Italy"
+	fi
+done
