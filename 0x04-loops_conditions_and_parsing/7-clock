@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# clock funtion - iterate till 12:59
+hour=0
+while [ $hour -lt 12 ]; do
+	if [ $hour -gt 0 ]
+	then
+		echo "Hour: $hour"
+	fi
+	min=1
+	while [ min -lt 60]; do
+		echo "$min"
+done
