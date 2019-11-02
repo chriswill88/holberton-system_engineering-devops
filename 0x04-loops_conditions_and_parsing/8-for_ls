@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+for i in $(ls . | cut --delimiter=- --fields=2)
+do echo "$i"
+done
