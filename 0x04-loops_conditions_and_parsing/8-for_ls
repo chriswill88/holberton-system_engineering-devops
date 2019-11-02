@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-for i in $(ls . | cut --delimiter=- --fields=2)
+for i in $(find . | cut --delimiter=- --fields=2 -s)
 do echo "$i"
 done
