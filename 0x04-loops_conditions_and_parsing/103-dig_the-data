@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# displays viditors log and https status code using awk
+awk 'BEGIN { FS=" "; } { printf "%s ", $1 } { printf "%s\n", $9 }' apache-access.log | sort | uniq -c | sort -nr
