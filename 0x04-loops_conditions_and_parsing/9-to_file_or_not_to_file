@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# this checks if holbertonschool file exists
 if [ -e ./holbertonschool ]; then echo "holbertonschool file exists"; else echo "holbertonschool file does not exist"; exit; fi
 if [ -s ./holbertonschool ]; then echo "holbertonschool file is not empty"; else echo "holbertonschool file is empty"; fi
 if [ -f ./holbertonschool ]; then echo "holbertonschool is a regular file"; fi
