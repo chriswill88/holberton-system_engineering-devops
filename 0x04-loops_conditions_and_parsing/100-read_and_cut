@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# display file /etc/passwd with read
+input="/etc/passwd"
+while IFS= read -r line; do echo "$line" | cut --delim=":" --fields="1 3 6"; done < "$input"
