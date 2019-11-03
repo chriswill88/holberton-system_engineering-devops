@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # formats and displays file in the directory using cut
-for i in $(find . | cut --delimiter=- --fields=2 -s)
+for i in $(find . | cut --delimiter=- --fields=2)
 do echo "$i"
 done
