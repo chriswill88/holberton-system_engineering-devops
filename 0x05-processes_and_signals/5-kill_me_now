@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script kills task 4 process
+pid="$(ps -x | grep 4-to_infinity_and_beyond | cut --delim=' ' --field=2)"
+
+for i in $pid; do
+	echo "$i"
+	kill "$i"
+	break
+done
