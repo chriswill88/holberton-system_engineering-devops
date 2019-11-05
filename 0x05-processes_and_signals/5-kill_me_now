@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
 # This script kills task 4 process
 # shellcheck disable=SC2009
-pid="$(ps -x | grep 4-to_infinity_and_beyond | grep bash | cut --delim=' ' --field=2)"
-
-for i in $pid; do
-	kill "$i"
-done
+pkill -f 4-to_infinity_and_beyond
