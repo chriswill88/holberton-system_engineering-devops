@@ -1,4 +1,3 @@
-
-#/usr/bin/env bash 
+#!/usr/bin/env bash 
 # This prints the pid with process name
 pgrep -l bash
