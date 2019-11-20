@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script pings 5 times to any address
 if [ ! -z "$1" ]; then
 	ping -c5 "$1"
 else
