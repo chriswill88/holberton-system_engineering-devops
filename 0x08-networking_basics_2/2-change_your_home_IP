@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#bash script that configures ubuntu server
+sed -i s/^il$/localhost 127.0.0.2/ /etc/hosts
