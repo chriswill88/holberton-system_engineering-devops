@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-ping -c5 $(BASH_ARGV[1])
