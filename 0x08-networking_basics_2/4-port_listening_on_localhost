@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#this script allows us to listen in on a point
+nc -k -l 98
