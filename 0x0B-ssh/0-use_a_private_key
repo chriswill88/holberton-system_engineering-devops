@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This program ssh into my server
+ssh ubuntu@35.237.245.13
