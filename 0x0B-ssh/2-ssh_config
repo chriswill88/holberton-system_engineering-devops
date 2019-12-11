@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This us a configuration file
+Host ubuntu
+	HostName 35.237.245.13
+	user ubuntu
