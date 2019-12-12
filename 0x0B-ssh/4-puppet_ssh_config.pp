@@ -3,11 +3,11 @@
 
 
 file_line { 'id file stuff':
-  path   => /etc/ssh/ssh_config,
-  line   => '\tIdentityFile ~/.ssh/holberton',
+  path => /etc/ssh/ssh_config,
+  line => '\tIdentityFile ~/.ssh/holberton',
 }
 
 file_line { 'psw no':
-  path   => /etc/ssh/ssh_config,
-  line   => '\tPasswordAuthentication no',
+  path => /etc/ssh/ssh_config,
+  line => '\tPasswordAuthentication no',
 }
