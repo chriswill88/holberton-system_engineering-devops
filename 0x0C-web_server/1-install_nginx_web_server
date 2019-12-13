@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 #installation and configuration of nginx on a new version of ubuntu
 
 # Installation
@@ -8,4 +8,3 @@ sudo apt-get install nginx -y
 #Configuration
 sudo service nginx start
 echo "Holberton School" > /var/www/html/index.html
-
