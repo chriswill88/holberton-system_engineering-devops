@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #installation and configuration of nginx on a new version of ubuntu
-
+# shellcheck disable=SC2154
 # Installation
 sudo apt-get update -y
 sudo apt-get install nginx -y
@@ -8,7 +8,7 @@ sudo apt-get install nginx -y
 #Configuration
 sudo service nginx start
 echo "Holberton School" > /var/www/html/index.html
-my_string='server {\n\tadd_header X-Served-By $HOSTNAME;\n'
+my_string="server {\\n\\tadd_header X-Served-By $HOSTNAME;\\n"
 find='server {'
 sed -i "0,/$find/{s/$find/$my_string/}" /etc/nginx/sites-enabled/default
 service nginx reload
