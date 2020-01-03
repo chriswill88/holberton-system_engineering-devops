@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#installation and configuration of nginx on a new version of ubuntu
+# shellcheck disable=SC2154
+# Installation
+sudo apt-get update -y
+sudo apt-get install haproxy -y
+
+#Configuration
+my_string="frontend haproxynode\\n\\tbind *:80\\n\\tmode http\\n\\tdefault_backend backendnodes\\n\\nbackend backendnodes\\n\\tbalance roundrobin\\n\\toption forwardfor\\n\\tserver 712-web-01 35.237.245.13\\n\\tserver 712-web-02 35.243.169.209\\n"
+
+echo -e $my_string >> /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
+echo "done"
