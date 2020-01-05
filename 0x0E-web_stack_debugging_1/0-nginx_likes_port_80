@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# debugging for nginx server
+
+# edit config file thats causing nginx to use another port
+sed -i 's/8080/80/' /etc/nginx/sites-enabled/default
+
+# reload and restart the server
+sudo service nginx reload
+sudo service nginx restart
