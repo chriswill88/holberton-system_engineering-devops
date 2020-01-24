@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Task 5 dumps all db and archive the dumped sql file
+# shellcheck disable=SC2086
+
+# mysqldump all databases to a particular file
+mysqldump --all-databases --single-transaction --user=root --password=$1 > backup.sql
+
+# create name
+name=$(date +%d-%m-%y.tar.gz)
+
+# create tar.gz
+tar -czf $name backup.sql
