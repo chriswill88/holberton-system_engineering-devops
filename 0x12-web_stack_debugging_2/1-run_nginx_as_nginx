@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# this program sets up a server and sets a nginx as user for our server
+
+# install nginx
+sudo apt-get install nginx -y
+sudo apt-get install lsof -y
+
+# set user and permissions
+sudo service nginx stop
+sudo chown -R nginx:nginx /etc/nginx/nginx.conf
+sudo chmod u+rw /etc/nginx/nginx.conf
+# sudo chown nginx:nginx /usr/sbin/nginx
+
+# clearing a process on a certain port
+kill $(lsof -t -i:8080)
+
+sed -i 's/80/8080' /etc/nginx/sites-available/grub-set-default
+sed -i 's/#user www-data;/user nginx;/g' /etc/nginx/nginx.apt-conf
+
+service nginx start
