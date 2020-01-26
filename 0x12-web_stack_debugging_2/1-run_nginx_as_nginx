@@ -14,7 +14,7 @@ sudo chmod u+rw /etc/nginx/nginx.conf
 # clearing a process on a certain port
 kill "$(lsof -t -i:8080)"
 
-sed -i 's/80/8080' /etc/nginx/sites-available/grub-set-default
-sed -i 's/#user www-data;/user nginx;/g' /etc/nginx/nginx.apt-conf
+sed -i 's/80/8080/' /etc/nginx/sites-available/default
+sed -i 's/#user www-data;/user nginx;/g' /etc/nginx/nginx.conf
 
-service nginx start
+su nginx -c "service nginx start"
