@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # this program sets up a server and sets a nginx as user for our server
 
-# install nginx
-# sudo apt-get install lsof -y
-# i dont need to use lsof
+# install lsof
+sudo apt-get install lsof -y
 
 
 # set user and permissions
@@ -12,9 +11,8 @@ sudo chmod u+rw /etc/nginx/nginx.conf
 # sudo chown nginx:nginx /usr/sbin/nginx
 
 # clearing a process on a certain port
-# kill "$(lsof -t -i:8080)"
-pkill apache2
-# use pkill to kill the only process in the way
+kill "$(lsof -t -i:8080)"
+
 
 # configuration defaut port 80 to 8080 and user to nginx
 sed -i 's/80/8080/' /etc/nginx/sites-available/default
