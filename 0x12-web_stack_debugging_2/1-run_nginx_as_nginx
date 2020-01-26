@@ -7,7 +7,6 @@
 
 
 # set user and permissions
-sudo service nginx stop
 sudo chown -R nginx:nginx /etc/nginx/nginx.conf
 sudo chmod u+rw /etc/nginx/nginx.conf
 # sudo chown nginx:nginx /usr/sbin/nginx
