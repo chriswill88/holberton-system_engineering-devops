@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# this script displays info about subdomains
+# shellcheck disable=SC2086
+DOMAIN=$1
+SUBD=$2
+SERVER=( "www" "lb-01" "web-01" "web-02" )
+
+if [ ! -z "$SUBD" ]
+then
+	LINE=$(dig "$SUBD"."$DOMAIN" | grep -A1 'ANSWER SECTION:' | tail -n 1 | tr "\\t" " ")
+	TYPE=$(echo "$LINE" | awk -F " " '{print $4}')
+	ADDY=$(echo "$LINE" | awk -F " " '{print $5}')
+	echo "The subdomain $SUBD is a $TYPE record and points to $ADDY"
+else
+	for i in "${SERVER[@]}"
+	do
+		LINE=$(dig "$i"."$DOMAIN" | grep -A1 'ANSWER SECTION:' | tail -n 1 | tr "\\t" " ")
+		TYPE=$(echo "$LINE" | awk -F " " '{print $4}')
+		ADDY=$(echo "$LINE" | awk -F " " '{print $5}')
+		echo "The subdomain $i is a $TYPE record and points to $ADDY"
+	done
+fi
