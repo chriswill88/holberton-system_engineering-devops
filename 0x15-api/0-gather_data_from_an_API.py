@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-import sys
 import requests
-"""task 0: parses info from api"""
+import sys
+"""parses info from api"""
 
 if __name__ == "__main__":
     idE = int(sys.argv[1])
