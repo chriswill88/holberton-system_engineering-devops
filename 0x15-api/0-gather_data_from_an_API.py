@@ -20,10 +20,11 @@ if __name__ == "__main__":
     listy = a.json()
     for i in listy:
         if i['userId'] == idE:
-            title_list.append(i["title"])
             TOTAL_NUMBER_OF_TASKS += 1
             if i["completed"] is True:
                 NUMBER_OF_DONE_TASKS += 1
+                title_list.append(i["title"])
+
 
     print("Employee {} is done with tasks({}/{}):".format(
         EMPLOYEE_NAME,
