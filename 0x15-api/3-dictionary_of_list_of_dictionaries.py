@@ -10,24 +10,29 @@ if __name__ == "__main__":
     TASK_TITLE = ''
     r = requests.get('https://jsonplaceholder.typicode.com/users')
     a = requests.get('https://jsonplaceholder.typicode.com/todos')
-    listy = r.json()
-    newdict = {}
 
-    for i in listy:
-        USER_ID = str(i['id'])
+    userlist = r.json()
+    todolist = a.json()
+
+    thedict = {}
+    prev = []
+
+    for i in userlist:
+        USER_ID = i['id']
         USERNAME = i["username"]
-        listy = a.json()
-        licty = []
         num = 0
-        for i in listy:
-            TASK_TITLE = i["title"]
-            TASK_COMPLETED_STATUS = i["completed"]
-            licty.append({})
-            licty[num]["username"] = USERNAME
-            licty[num]["task"] = TASK_TITLE
-            licty[num]["completed"] = TASK_COMPLETED_STATUS
-            num += 1
-        newdict[str(USER_ID)] = licty
-
+        datalist = []
+        if USER_ID not in prev:
+            for x in todolist:
+                if x["userId"] == USER_ID:
+                    TASK_TITLE = x["title"]
+                    TASK_COMPLETED_STATUS = x["completed"]
+                    datalist.append({})
+                    datalist[num]["username"] = USERNAME
+                    datalist[num]["task"] = TASK_TITLE
+                    datalist[num]["completed"] = TASK_COMPLETED_STATUS
+                    num += 1
+                thedict[str(USER_ID)] = datalist
+        prev.append(USER_ID)
     with open('todo_all_employees.json'.format(USER_ID), 'w') as e:
-        json.dump(newdict, e)
+        json.dump(thedict, e)
