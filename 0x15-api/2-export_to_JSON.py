@@ -1,15 +1,14 @@
 #!/usr/bin/python3
+"""parses info from api"""
 import json
 import requests
 import sys
-"""parses info from api"""
 
 if __name__ == "__main__":
     USER_ID = int(sys.argv[1])
     USERNAME = ""
     TASK_COMPLETED_STATUS = ""
     TASK_TITLE = ''
-    # this pulls up the posts
     r = requests.get('https://jsonplaceholder.typicode.com/users')
     listy = r.json()
     for i in listy:
@@ -20,8 +19,6 @@ if __name__ == "__main__":
     title_list = []
     a = requests.get('https://jsonplaceholder.typicode.com/todos')
     listy = a.json()
-    # with open('{}.csv'.format(USER_ID), 'w', newline='') as e:
-    # write = csv.writer(e)
     licty = []
     newdict = {str(USER_ID): licty}
     num = 0
