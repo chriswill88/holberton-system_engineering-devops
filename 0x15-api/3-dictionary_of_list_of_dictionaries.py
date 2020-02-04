@@ -21,7 +21,7 @@ if __name__ == "__main__":
         num = 0
         for i in listy:
             TASK_TITLE = i["title"]
-            TASK_COMPLETED_STATUS = str(i["completed"])
+            TASK_COMPLETED_STATUS = i["completed"]
             licty.append({})
             licty[num]["username"] = USERNAME
             licty[num]["task"] = TASK_TITLE

@@ -11,6 +11,7 @@ if __name__ == "__main__":
     TASK_TITLE = ''
     r = requests.get('https://jsonplaceholder.typicode.com/users')
     listy = r.json()
+    num = 0
     for i in listy:
         if i['id'] == USER_ID:
             rightdict = i
@@ -21,11 +22,10 @@ if __name__ == "__main__":
     listy = a.json()
     licty = []
     newdict = {str(USER_ID): licty}
-    num = 0
     for i in listy:
         if i['userId'] == USER_ID:
             TASK_TITLE = i["title"]
-            TASK_COMPLETED_STATUS = str(i["completed"])
+            TASK_COMPLETED_STATUS = i["completed"]
             licty.append({})
             licty[num]["task"] = TASK_TITLE
             licty[num]["completed"] = TASK_COMPLETED_STATUS
