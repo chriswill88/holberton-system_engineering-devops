@@ -31,6 +31,5 @@ if __name__ == "__main__":
             licty[num]["completed"] = TASK_COMPLETED_STATUS
             licty[num]["username"] = USERNAME
             num += 1
-
-    with open('{}.json'.format(USER_ID), 'w') as e:
+    with open(str(USER_ID) + '.json', 'w') as e:
         json.dump(newdict, e)
