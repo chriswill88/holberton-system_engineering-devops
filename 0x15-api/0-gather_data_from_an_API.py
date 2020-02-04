@@ -25,7 +25,6 @@ if __name__ == "__main__":
                 NUMBER_OF_DONE_TASKS += 1
                 title_list.append(i["title"])
 
-
     print("Employee {} is done with tasks({}/{}):".format(
         EMPLOYEE_NAME,
         NUMBER_OF_DONE_TASKS,
