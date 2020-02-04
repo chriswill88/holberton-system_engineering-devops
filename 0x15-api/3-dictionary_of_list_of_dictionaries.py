@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+"""parses info from api"""
 import json
 import requests
-"""parses info from api"""
 
 if __name__ == "__main__":
     USER_ID = ""
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     newdict = {}
 
     for i in listy:
-        USER_ID = i['id']
+        USER_ID = str(i['id'])
         USERNAME = i["username"]
         listy = a.json()
         licty = []
