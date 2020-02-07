@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+"""This modual contains number_of_subscribers functions"""
 import requests
 import requests.auth
 
 
 def number_of_subscribers(subreddit):
+    """This Function queries from the reddit api"""
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     numOfUsers = 0
     headers = {'User-Agent': 'Python/requests'}
