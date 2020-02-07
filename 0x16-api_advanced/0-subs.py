@@ -11,10 +11,7 @@ def number_of_subscribers(subreddit):
     red = requests.get(url, headers=headers, params={'raw_json': '1'})
     if red.status_code != 200:
         return 0
-    try:
-        rdict = red.json()
-    except Exception:
-        return 0
+    rdict = red.json()
     for i in rdict:
         if isinstance(rdict[i], dict):
             for x in rdict[i]:
