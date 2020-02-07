@@ -7,8 +7,8 @@ def number_of_subscribers(subreddit):
     """This Function queries from the reddit api"""
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     numOfUsers = 0
-    headers = {'User-Agent': 'Python/requests'}
-    red = requests.get(url, headers=headers, params={'raw_json': '1'})
+    headers = {"User-Agent": "ChangeMeClient/0.1 by Chris"}
+    red = requests.get(url, headers=headers)
     if red.status_code != 200:
         return 0
     rdict = red.json()
