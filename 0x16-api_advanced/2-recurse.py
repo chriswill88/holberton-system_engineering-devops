@@ -13,13 +13,11 @@ def recurse(subreddit, hot_list=[], next=None, count=0):
     red = requests.get(url, headers=headers, params={'after': next})
 
     if red.status_code != 200:
-        print("None")
-        return
+        return None
     try:
         rdict = red.json()
     except Exception:
-        print("None")
-        return
+        return None
     # print(rdict)
     for i in rdict:
         # print(i)
@@ -41,6 +39,8 @@ def recurse(subreddit, hot_list=[], next=None, count=0):
     if rdict['data']['after']:
         nexty = rdict['data']['after']
         recurse(subreddit, hot_list, nexty, count + 1)
+    if hot_list is None:
+        return None
     return hot_list
 
 # recurse("programming")
