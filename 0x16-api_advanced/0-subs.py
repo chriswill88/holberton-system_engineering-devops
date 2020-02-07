@@ -4,7 +4,6 @@ import requests.auth
 
 
 def number_of_subscribers(subreddit):
-    # client_auth = requests.auth.HTTPBasicAuth('p-jcoLKBynTLew', 'gko_LXELoV07ZBNUXrvWZfzE3aI')
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     numOfUsers = 0
     headers = {'User-Agent': 'Python/requests'}
