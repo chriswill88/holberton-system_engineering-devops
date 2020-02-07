@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """This modual contains number_of_subscribers functions"""
 import requests
-import requests.auth
 
 
 def number_of_subscribers(subreddit):
@@ -10,6 +9,8 @@ def number_of_subscribers(subreddit):
     numOfUsers = 0
     headers = {'User-Agent': 'Python/requests'}
     red = requests.get(url, headers=headers, params={'raw_json': '1'})
+    if red.status_code != 200:
+        return 0
     try:
         rdict = red.json()
     except Exception:
@@ -20,5 +21,4 @@ def number_of_subscribers(subreddit):
                 if x == 'subscribers':
                     numOfUsers = rdict[i][x]
                     break
-
     return numOfUsers
