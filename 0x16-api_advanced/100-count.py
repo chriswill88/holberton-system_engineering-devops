@@ -8,8 +8,9 @@ def count_words(subreddit, word_list, diction_count=None, url=None, next=None):
     # initializing the dictionary containing the updated results
     if diction_count is None:
         diction_count = {}
-        for i in word_list:
+        for c, i in enumerate(word_list):
             diction_count[i] = 0
+            word_list[c] = i.lower()
 
     if url is None:
         url = 'http://www.reddit.com/r/' + subreddit + '/hot/.json?limit=100'
